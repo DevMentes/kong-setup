@@ -27,8 +27,7 @@ services:
     image: kong:1.2.1-alpine
     command: kong migrations bootstrap
     depends_on:
-      kong-database:
-        condition: service_healthy
+      - kong-database
     environment:
       KONG_DATABASE: postgres
       KONG_PG_DATABASE: ${PG_DB}
