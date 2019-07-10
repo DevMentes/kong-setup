@@ -24,8 +24,7 @@ services:
       - 8001:8001 
       - 8444:8444
     links:
-      - kong-database:kong-database
-    
+      - kong-database    
 
   kong-migrations:
     image: kong:1.2.1-alpine
@@ -39,7 +38,7 @@ services:
       KONG_PG_USER: ${PG_USER}
       KONG_PG_PASSWORD: ${PG_PASS}
     links:
-      - kong-database:kong-database
+      - kong-database
     restart: on-failure
 
   kong-database:
