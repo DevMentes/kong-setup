@@ -39,7 +39,7 @@ services:
     restart: on-failure
 
   kong-database:
-    image: postgres:11-alpine
+    image: postgres:9.5-alpine
     restart: on-failure
     environment:
       POSTGRES_DB: ${PG_DB}
@@ -48,4 +48,4 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - ./pgdata:/var/lib/postgresql/data
+      - kong_data:/var/lib/postgresql/data
