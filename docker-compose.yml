@@ -1,4 +1,8 @@
 version: '3'
+
+volumes:
+    kong_data: {}
+
 services:
   kong:
     image: kong:1.2.1-alpine
